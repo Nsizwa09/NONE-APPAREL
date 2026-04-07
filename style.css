@@ -96,7 +96,7 @@ nav a:hover::after {
   display: grid;
   grid-template-columns: repeat(2, minmax(150px, 1fr));
   gap: 50px;
-  padding: 200px 200px;
+  padding: 50px 200px;
   justify-content: center;
 }
 
@@ -266,5 +266,99 @@ button:hover {
   .cart {
     margin: 10px;
     padding: 20px;
+  }
+}
+
+/* Footer base */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+/* Container for columns */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+/* Individual sections */
+.footer-section {
+  flex: 1 1 200px; /* flexible width, min 200px */
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+/* Social links */
+.social-links a {
+  margin-right: 15px;
+  font-weight: bold;
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+/* Footer bottom text */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  color: #888;
+  font-size: 13px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+}
+
+/* Responsive: stack sections on smaller screens */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    min-width: unset;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .social-links a {
+    margin-right: 10px;
   }
 }
