@@ -3,96 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NONE Apparel</title>
+  <title>NONE Apparel - Modern Fashion</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
-  <h1>NONE APPAREL</h1>
+  <div class="container">
+    <h1>NONE Apparel</h1>
 
-  <nav id="nav-menu">
-    <a href="#">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#cart">Cart</a>
-  </nav>
+    <nav id="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#" onclick="openCart()" class="cart-icon">
+        <span class="cart-count" id="cart-count">0</span>
+        🛒
+      </a>
+    </nav>
 
-  <!-- Hamburger -->
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </header>
 
-<section class="hero">
+<section id="home" class="hero">
   <div class="hero-content">
     <h2>Minimal. Bold. NONE.</h2>
-    <p>Premium women's fashion</p>
+    <p>Premium women's fashion for the modern lifestyle</p>
+    <a href="#shop" class="cta-button">Shop Collection</a>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="container">
+    <h2>Featured Collection</h2>
+    <p>Discover our latest pieces designed for comfort and style</p>
+    <div class="featured-grid">
+      <div class="featured-item">
+        <img src="Screenshot_20260407_145641_WhatsApp.jpg" alt="Sleeveless Crop Set">
+        <div class="featured-content">
+          <h3>Sleeveless Crop Set</h3>
+          <p>Perfect for layering and everyday wear</p>
+          <span class="price">R340,00</span>
+        </div>
+      </div>
+      <div class="featured-item">
+        <img src="Screenshot_20260407_145649_WhatsApp.jpg" alt="Long Legging Set">
+        <div class="featured-content">
+          <h3>Long Legging Set</h3>
+          <p>Comfortable and versatile activewear</p>
+          <span class="price">R330,00</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="shop" class="products">
-  <h1>Shop Our Collection</h1><br/>
-  <p>Our curated collection is designed for the modern enthusiast who values comfort, style and practicaliy. DRESS YOUR FIT, NONE.</p>
-    <div class="product">
-        <img src="Screenshot_20260407_145641_WhatsApp.jpg">
-        <h3>Sleeveless Crop Set</h3>
-        <p>R340,00</p>
-        <button onclick="addToCart('Crop Top Set', 340)">Add to Cart</button>
-    </div>
+  <div class="container">
+    <h2>Shop Our Collection</h2>
+    <p>Our curated collection is designed for the modern enthusiast who values comfort, style and practicality.</p>
 
-    <div class="product">
-        <img src="Screenshot_20260407_145649_WhatsApp.jpg">
-        <h3>Long Legging Set</h3>
-        <p>R330,00</p>
-        <button onclick="addToCart('Long Legging Set', 330)">Add to Cart</button>
-    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image">
+          <img src="Screenshot_20260407_145641_WhatsApp.jpg" alt="Sleeveless Crop Set">
+          <div class="product-overlay">
+            <button onclick="addToCart('Sleeveless Crop Set', 340)" class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Sleeveless Crop Set</h3>
+          <p>R340,00</p>
+        </div>
+      </div>
 
-    <div class="product">
-        <img src="Screenshot_20260407_145616_WhatsApp.jpg">
-        <h3>Jumpsuit (Open Back)</h3>
-        <p>R300,00</p>
-        <button onclick="addToCart('Open BackJumpsuit', 300)">Add to Cart</button>
-    </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="Screenshot_20260407_145649_WhatsApp.jpg" alt="Long Legging Set">
+          <div class="product-overlay">
+            <button onclick="addToCart('Long Legging Set', 330)" class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Long Legging Set</h3>
+          <p>R330,00</p>
+        </div>
+      </div>
 
-    <div class="product">
-        <img src="Screenshot_20260407_145659_WhatsApp.jpg">
-        <h3>Legging Short Set</h3>
-        <p>R300,00</p>
-        <button onclick="addToCart('Short Legging Set', 300)">Add to Cart</button>
-    </div>
-</section>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="Screenshot_20260407_145616_WhatsApp.jpg" alt="Jumpsuit (Open Back)">
+          <div class="product-overlay">
+            <button onclick="addToCart('Open Back Jumpsuit', 300)" class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Jumpsuit (Open Back)</h3>
+          <p>R300,00</p>
+        </div>
+      </div>
 
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-section">
-      <h4>About Us</h4>
-      <p>We offer the best products for your lifestyle. Quality and style guaranteed.</p>
-    </div>
-
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h4>Follow Us</h4>
-      <div class="social-links">
-        <a href="#" aria-label="Facebook">FB</a>
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="Twitter">TW</a>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="Screenshot_20260407_145659_WhatsApp.jpg" alt="Legging Short Set">
+          <div class="product-overlay">
+            <button onclick="addToCart('Short Legging Set', 300)" class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>Legging Short Set</h3>
+          <p>R300,00</p>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="footer-bottom">
-    <p>© 2026 Your Company. All rights reserved.</p>
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About NONE Apparel</h2>
+        <p>We believe in fashion that empowers. Our pieces are designed with the modern woman in mind - comfortable, stylish, and versatile. Each item in our collection tells a story of minimalism and boldness.</p>
+        <p>Founded with the vision to create sustainable, high-quality activewear that doesn't compromise on style or comfort.</p>
+      </div>
+      <div class="about-image">
+        <img src="Screenshot_20260407_134842_Instagram.jpg" alt="NONE Apparel">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <h2>Stay Updated</h2>
+    <p>Get the latest updates on new arrivals and exclusive offers</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email" id="email-input">
+      <button onclick="subscribeNewsletter()">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- Cart Modal -->
+<div id="cart-modal" class="cart-modal">
+  <div class="cart-content">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <span class="close-cart" onclick="closeCart()">&times;</span>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-total">
+      <strong>Total: R<span id="total">0</span></strong>
+    </div>
+    <button onclick="checkout()" class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>NONE Apparel</h4>
+        <p>Premium fashion for the modern lifestyle. Quality, comfort, and style in every piece.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Twitter">Twitter</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 NONE Apparel. All rights reserved.</p>
+    </div>
   </div>
 </footer>
 
