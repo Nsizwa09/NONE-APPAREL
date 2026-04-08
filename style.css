@@ -6,14 +6,15 @@
 }
 
 :root {
-  --primary-color: #000000;
-  --secondary-color: #ffffff;
-  --accent-color: #ff6b6b;
-  --text-color: #333333;
-  --light-gray: #f8f9fa;
-  --medium-gray: #e9ecef;
-  --dark-gray: #6c757d;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --primary-color: #111111;
+  --secondary-color: #F5F5F5;
+  --accent-color: #CBA135;
+  --text-color: #1C1C1C;
+  --text-light: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --medium-gray: #E8E8E8;
+  --dark-gray: #666666;
+  --shadow: 0 4px 20px rgba(17, 17, 17, 0.1);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -37,7 +38,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(245, 245, 245, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--medium-gray);
   z-index: 1000;
@@ -713,7 +714,7 @@ nav a.active::after {
     width: 100%;
     padding: 20px 40px;
     text-align: center;
-    color: #ffffff;
+    color: var(--text-light);
     font-weight: 500;
     font-size: 18px;
     text-transform: uppercase;
@@ -892,7 +893,7 @@ button:hover {
 /* Cart section */
 .cart {
   padding: 40px 30px;
-  background: #fff;
+  background: var(--secondary-color);
   margin: 20px;
   border-radius: 12px;
 }
@@ -990,8 +991,8 @@ button:hover {
 
 /* Footer base */
 .footer {
-  background-color: #222;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--text-light);
   padding: 40px 20px 20px;
   font-family: sans-serif;
   font-size: 14px;
@@ -1016,7 +1017,7 @@ button:hover {
 .footer-section h4 {
   margin-bottom: 15px;
   font-size: 16px;
-  color: #fff;
+  color: var(--text-light);
 }
 
 .footer-section p,
@@ -1031,35 +1032,35 @@ button:hover {
 }
 
 .footer-section a {
-  color: #bbb;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #fff;
+  color: var(--text-light);
 }
 
 /* Social links */
 .social-links a {
   margin-right: 15px;
   font-weight: bold;
-  color: #bbb;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #fff;
+  color: var(--text-light);
 }
 
 /* Footer bottom text */
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
-  color: #888;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 13px;
-  border-top: 1px solid #444;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 15px;
 }
 
