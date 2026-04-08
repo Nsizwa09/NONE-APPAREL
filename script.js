@@ -57,6 +57,7 @@ function closeCart() {
 // Mobile menu
 function toggleMenu() {
   document.getElementById("nav-menu").classList.toggle("active");
+  document.querySelector(".hamburger").classList.toggle("active");
 }
 
 // Newsletter subscription
