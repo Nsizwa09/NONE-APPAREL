@@ -20,7 +20,7 @@
       <a href="#contact">Contact</a>
       <a href="#" onclick="openCart()" class="cart-icon">
         <span class="cart-count" id="cart-count">0</span>
-        🛒
+          Cart
       </a>
     </nav>
 
@@ -46,7 +46,7 @@
     <h2>Featured Collection</h2>
     <p>Discover our latest pieces designed for comfort and style</p>
     <div class="featured-grid">
-      <div class="featured-item">
+      <div class="featured-item" onclick="viewProduct(1)">
         <img src="Screenshot_20260407_145641_WhatsApp.jpg" alt="Sleeveless Crop Set">
         <div class="featured-content">
           <h3>Sleeveless Crop Set</h3>
@@ -54,7 +54,7 @@
           <span class="price">R340,00</span>
         </div>
       </div>
-      <div class="featured-item">
+      <div class="featured-item" onclick="viewProduct(2)">
         <img src="Screenshot_20260407_145649_WhatsApp.jpg" alt="Long Legging Set">
         <div class="featured-content">
           <h3>Long Legging Set</h3>
@@ -72,7 +72,7 @@
     <p>Our curated collection is designed for the modern enthusiast who values comfort, style and practicality.</p>
 
     <div class="product-grid">
-      <div class="product-card">
+      <div class="product-card" onclick="viewProduct(1)">
         <div class="product-image">
           <img src="Screenshot_20260407_145641_WhatsApp.jpg" alt="Sleeveless Crop Set">
           <div class="product-overlay">
@@ -81,12 +81,12 @@
               <p>Perfect for layering and everyday wear</p>
               <span class="price">R340,00</span>
             </div>
-            <button onclick="addToCart('Sleeveless Crop Set', 340)" class="add-to-cart-btn">Add to Cart</button>
+            <button onclick="event.stopPropagation(); addToCart('Sleeveless Crop Set', 340)" class="add-to-cart-btn">Add to Cart</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" onclick="viewProduct(2)">
         <div class="product-image">
           <img src="Screenshot_20260407_145649_WhatsApp.jpg" alt="Long Legging Set">
           <div class="product-overlay">
@@ -95,12 +95,12 @@
               <p>Comfortable and versatile activewear</p>
               <span class="price">R330,00</span>
             </div>
-            <button onclick="addToCart('Long Legging Set', 330)" class="add-to-cart-btn">Add to Cart</button>
+            <button onclick="event.stopPropagation(); addToCart('Long Legging Set', 330)" class="add-to-cart-btn">Add to Cart</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" onclick="viewProduct(3)">
         <div class="product-image">
           <img src="Screenshot_20260407_145616_WhatsApp.jpg" alt="Jumpsuit (Open Back)">
           <div class="product-overlay">
@@ -109,12 +109,12 @@
               <p>Stylish and elegant one-piece design</p>
               <span class="price">R300,00</span>
             </div>
-            <button onclick="addToCart('Open Back Jumpsuit', 300)" class="add-to-cart-btn">Add to Cart</button>
+            <button onclick="event.stopPropagation(); addToCart('Open Back Jumpsuit', 300)" class="add-to-cart-btn">Add to Cart</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" onclick="viewProduct(4)">
         <div class="product-image">
           <img src="Screenshot_20260407_145659_WhatsApp.jpg" alt="Legging Short Set">
           <div class="product-overlay">
@@ -123,7 +123,7 @@
               <p>Perfect blend of comfort and style</p>
               <span class="price">R300,00</span>
             </div>
-            <button onclick="addToCart('Short Legging Set', 300)" class="add-to-cart-btn">Add to Cart</button>
+            <button onclick="event.stopPropagation(); addToCart('Short Legging Set', 300)" class="add-to-cart-btn">Add to Cart</button>
           </div>
         </div>
       </div>

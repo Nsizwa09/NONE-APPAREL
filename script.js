@@ -138,3 +138,8 @@ document.getElementById("cart-modal").addEventListener("click", function(e) {
 document.addEventListener("DOMContentLoaded", function() {
   updateCartCount();
 });
+
+// Product detail page navigation
+function viewProduct(id) {
+  window.location.href = 'product.html?id=' + id;
+}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product - NONE Apparel</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1><a href="index.html" style="text-decoration: none; color: inherit;">NONE Apparel</a></h1>
+
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="index.html#shop">Shop</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="#" onclick="openCart()" class="cart-icon">
+        <span class="cart-count" id="cart-count">0</span>
+        Cart
+      </a>
+    </nav>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Product Detail Section -->
+<section class="product-detail">
+  <div class="container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> / <a href="index.html#shop">Shop</a> / <span id="breadcrumb-name">Product</span>
+    </div>
+
+    <div class="product-detail-content">
+      <!-- Product Images Gallery -->
+      <div class="product-gallery">
+        <div class="main-image-container">
+          <img id="main-image" src="" alt="Product" class="main-image">
+        </div>
+        <div class="thumbnail-gallery">
+          <div class="thumbnail active" onclick="changeMainImage(this)">
+            <img id="thumb-1" src="" alt="Product thumbnail">
+          </div>
+          <div class="thumbnail" onclick="changeMainImage(this)">
+            <img id="thumb-2" src="" alt="Product thumbnail">
+          </div>
+          <button class="gallery-nav prev" onclick="prevImage()">❮</button>
+          <button class="gallery-nav next" onclick="nextImage()">❯</button>
+        </div>
+      </div>
+
+      <!-- Product Information -->
+      <div class="product-info-section">
+        <div class="product-meta">
+          <span class="product-category">Premium Collection</span>
+          <h1 id="product-name">Product Name</h1>
+          
+          <!-- Rating -->
+          <div class="product-rating">
+            <div class="stars">★★★★★</div>
+            <span class="rating-count">(127 reviews)</span>
+          </div>
+
+          <!-- Price -->
+          <div class="product-price-section">
+            <span class="price" id="product-price">R0,00</span>
+            <span class="price-tag">Premium Quality</span>
+          </div>
+
+          <!-- Description -->
+          <div class="product-description">
+            <p id="product-description">Product description goes here.</p>
+          </div>
+
+          <!-- Product Details -->
+          <div class="product-specs">
+            <h3>Product Details</h3>
+            <table class="specs-table">
+              <tr>
+                <td><strong>Material</strong></td>
+                <td id="spec-material">100% Premium Fabric</td>
+              </tr>
+              <tr>
+                <td><strong>Care</strong></td>
+                <td id="spec-care">Machine wash cold</td>
+              </tr>
+              <tr>
+                <td><strong>Availability</strong></td>
+                <td id="spec-availability">In Stock</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Size Selection -->
+          <div class="product-sizes">
+            <h3>Size</h3>
+            <div class="size-selector">
+              <button class="size-btn" onclick="selectSize(this, 'XS')">XS</button>
+              <button class="size-btn" onclick="selectSize(this, 'S')">S</button>
+              <button class="size-btn active" onclick="selectSize(this, 'M')">M</button>
+              <button class="size-btn" onclick="selectSize(this, 'L')">L</button>
+              <button class="size-btn" onclick="selectSize(this, 'XL')">XL</button>
+              <button class="size-btn" onclick="selectSize(this, 'XXL')">XXL</button>
+            </div>
+          </div>
+
+          <!-- Quantity Selection -->
+          <div class="product-quantity">
+            <h3>Quantity</h3>
+            <div class="quantity-selector">
+              <button class="qty-btn" onclick="decreaseQty()">−</button>
+              <input type="number" id="quantity" value="1" min="1" max="10">
+              <button class="qty-btn" onclick="increaseQty()">+</button>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button id="add-btn" class="add-to-cart-btn-large" onclick="addProductToCart()">
+            Add to Cart
+          </button>
+
+          <!-- Additional Info -->
+          <div class="product-additional">
+            <div class="info-item">
+              <span class="icon">🚚</span>
+              <div>
+                <strong>Free Shipping</strong>
+                <p>On orders over R500</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="icon">↩️</span>
+              <div>
+                <strong>Easy Returns</strong>
+                <p>30-day return policy</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="icon">🛡️</span>
+              <div>
+                <strong>Quality Assured</strong>
+                <p>Premium materials guaranteed</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Share -->
+          <div class="product-share">
+            <h3>Share</h3>
+            <div class="share-buttons">
+              <a href="#" class="share-btn">Instagram</a>
+              <a href="#" class="share-btn">Facebook</a>
+              <a href="#" class="share-btn">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <section class="related-products">
+      <h2>You Might Also Like</h2>
+      <div class="product-grid">
+        <div class="product-card" onclick="viewProduct(1)">
+          <div class="product-image">
+            <img src="Screenshot_20260407_145641_WhatsApp.jpg" alt="Sleeveless Crop Set">
+            <div class="product-overlay">
+              <div class="product-content">
+                <h3>Sleeveless Crop Set</h3>
+                <span class="price">R340,00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" onclick="viewProduct(2)">
+          <div class="product-image">
+            <img src="Screenshot_20260407_145649_WhatsApp.jpg" alt="Long Legging Set">
+            <div class="product-overlay">
+              <div class="product-content">
+                <h3>Long Legging Set</h3>
+                <span class="price">R330,00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" onclick="viewProduct(3)">
+          <div class="product-image">
+            <img src="Screenshot_20260407_145616_WhatsApp.jpg" alt="Jumpsuit (Open Back)">
+            <div class="product-overlay">
+              <div class="product-content">
+                <h3>Jumpsuit (Open Back)</h3>
+                <span class="price">R300,00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" onclick="viewProduct(4)">
+          <div class="product-image">
+            <img src="Screenshot_20260407_145659_WhatsApp.jpg" alt="Legging Short Set">
+            <div class="product-overlay">
+              <div class="product-content">
+                <h3>Legging Short Set</h3>
+                <span class="price">R300,00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- Customer Reviews Section -->
+<section class="reviews-section">
+  <div class="container">
+    <h2>Customer Reviews</h2>
+    <div class="reviews-container">
+      <div class="review">
+        <div class="review-header">
+          <div class="reviewer-info">
+            <strong>Sarah M.</strong>
+            <span class="review-date">2 weeks ago</span>
+          </div>
+          <div class="review-rating">★★★★★</div>
+        </div>
+        <p class="review-text">"Absolutely love this piece! The quality is exceptional and it fits perfectly. Highly recommend NONE Apparel for anyone looking for premium activewear."</p>
+      </div>
+      <div class="review">
+        <div class="review-header">
+          <div class="reviewer-info">
+            <strong>Jessica L.</strong>
+            <span class="review-date">1 month ago</span>
+          </div>
+          <div class="review-rating">★★★★★</div>
+        </div>
+        <p class="review-text">"Best purchase I've made in a while. The material quality is outstanding and the design is so elegant. Worth every rand!"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cart Modal -->
+<div id="cart-modal" class="cart-modal">
+  <div class="cart-content">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <span class="close-cart" onclick="closeCart()">&times;</span>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-total">
+      <strong>Total: R<span id="total">0</span></strong>
+    </div>
+    <button onclick="checkout()" class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>NONE Apparel</h4>
+        <p>Premium fashion for the modern lifestyle. Quality, comfort, and style in every piece.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#shop">Shop</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 NONE Apparel. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Product data
+  const products = {
+    1: {
+      name: 'Sleeveless Crop Set',
+      price: 340,
+      image: 'Screenshot_20260407_145641_WhatsApp.jpg',
+      description: 'The perfect layering piece for any season. This sleeveless crop set combines comfort with style, making it ideal for everyday wear or activewear. Made from premium, breathable fabric that moves with you.',
+      material: '92% Polyester, 8% Spandex',
+      care: 'Machine wash cold with similar colors',
+      category: 'Tops & Sets'
+    },
+    2: {
+      name: 'Long Legging Set',
+      price: 330,
+      image: 'Screenshot_20260407_145649_WhatsApp.jpg',
+      description: 'Versatile and comfortable long leggings designed for the modern woman. Whether you\'re working out or running errands, these leggings offer the perfect blend of style and functionality.',
+      material: '90% Polyester, 10% Spandex',
+      care: 'Machine wash cold, hang dry recommended',
+      category: 'Bottoms'
+    },
+    3: {
+      name: 'Jumpsuit (Open Back)',
+      price: 300,
+      image: 'Screenshot_20260407_145616_WhatsApp.jpg',
+      description: 'Make a stunning statement with this elegant open-back jumpsuit. Perfect for special occasions or elevated everyday wear. The sleek design and premium fabric ensure you\'ll look and feel your best.',
+      material: '88% Nylon, 12% Spandex',
+      care: 'Hand wash or delicate cycle in cold water',
+      category: 'Dresses & Jumpsuits'
+    },
+    4: {
+      name: 'Legging Short Set',
+      price: 300,
+      image: 'Screenshot_20260407_145659_WhatsApp.jpg',
+      description: 'Perfect blend of comfort and style. These short leggings are ideal for workouts, casual outings, or loungewear. The high-waisted design provides support and a flattering silhouette.',
+      material: '91% Polyester, 9% Spandex',
+      care: 'Machine wash warm, tumble dry low',
+      category: 'Bottoms'
+    }
+  };
+
+  let currentProduct = null;
+  let selectedSize = 'M';
+  let quantity = 1;
+
+  function loadProduct() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id')) || 1;
+    
+    currentProduct = products[productId];
+    
+    if (currentProduct) {
+      document.getElementById('product-name').textContent = currentProduct.name;
+      document.getElementById('product-price').textContent = 'R' + currentProduct.price + ',00';
+      document.getElementById('product-description').textContent = currentProduct.description;
+      document.getElementById('spec-material').textContent = currentProduct.material;
+      document.getElementById('spec-care').textContent = currentProduct.care;
+      document.getElementById('breadcrumb-name').textContent = currentProduct.name;
+      
+      // Set images
+      const mainImg = document.getElementById('main-image');
+      mainImg.src = currentProduct.image;
+      document.getElementById('thumb-1').src = currentProduct.image;
+      document.getElementById('thumb-2').src = currentProduct.image;
+    }
+  }
+
+  function changeMainImage(thumb) {
+    document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+    document.getElementById('main-image').src = thumb.querySelector('img').src;
+  }
+
+  function selectSize(btn, size) {
+    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedSize = size;
+  }
+
+  function increaseQty() {
+    quantity = Math.min(quantity + 1, 10);
+    document.getElementById('quantity').value = quantity;
+  }
+
+  function decreaseQty() {
+    quantity = Math.max(quantity - 1, 1);
+    document.getElementById('quantity').value = quantity;
+  }
+
+  function addProductToCart() {
+    if (currentProduct) {
+      for (let i = 0; i < quantity; i++) {
+        addToCart(currentProduct.name + ' (Size: ' + selectedSize + ')', currentProduct.price);
+      }
+      showNotification('Added to cart!');
+      quantity = 1;
+      document.getElementById('quantity').value = 1;
+    }
+  }
+
+  function viewProduct(id) {
+    window.location.href = 'product.html?id=' + id;
+  }
+
+  function nextImage() {
+    const currentImg = document.querySelector('.thumbnail.active img').src;
+    const thumbs = document.querySelectorAll('.thumbnail');
+    let nextThumb = thumbs[0];
+    for (let i = 0; i < thumbs.length; i++) {
+      if (thumbs[i].querySelector('img').src === currentImg) {
+        nextThumb = thumbs[(i + 1) % thumbs.length];
+        break;
+      }
+    }
+    changeMainImage(nextThumb.parentElement);
+  }
+
+  function prevImage() {
+    const currentImg = document.querySelector('.thumbnail.active img').src;
+    const thumbs = document.querySelectorAll('.thumbnail');
+    let prevThumb = thumbs[thumbs.length - 1];
+    for (let i = 0; i < thumbs.length; i++) {
+      if (thumbs[i].querySelector('img').src === currentImg) {
+        prevThumb = thumbs[(i - 1 + thumbs.length) % thumbs.length];
+        break;
+      }
+    }
+    changeMainImage(prevThumb.parentElement);
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    loadProduct();
+    updateCartCount();
+  });
+</script>
+</body>
+</html>
