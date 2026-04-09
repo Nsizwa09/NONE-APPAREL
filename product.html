@@ -315,10 +315,17 @@
     }
   };
 
-  let currentProduct = null;
-  let selectedSize = null;
-  let selectedColor = null;
-  let quantity = 1;
+  function getColorCode(color) {
+    const colorMap = {
+      'Black': '#000000',
+      'White': '#ffffff',
+      'Grey': '#808080',
+      'Navy': '#000080',
+      'Red': '#ff0000',
+      'Pink': '#ffc0cb'
+    };
+    return colorMap[color] || '#cccccc';
+  }
 
   function loadProduct() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -347,6 +354,11 @@
         const colorBtn = document.createElement('button');
         colorBtn.className = 'color-btn';
         colorBtn.textContent = color;
+        colorBtn.style.backgroundColor = getColorCode(color);
+        if (color === 'White') {
+          colorBtn.style.color = '#000000';
+          colorBtn.style.textShadow = 'none';
+        }
         colorBtn.onclick = () => selectColor(colorBtn, color);
         colorSelector.appendChild(colorBtn);
       });
