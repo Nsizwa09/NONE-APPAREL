@@ -99,10 +99,18 @@
             <div class="size-selector">
               <button class="size-btn" onclick="selectSize(this, 'XS')">XS</button>
               <button class="size-btn" onclick="selectSize(this, 'S')">S</button>
-              <button class="size-btn active" onclick="selectSize(this, 'M')">M</button>
+              <button class="size-btn" onclick="selectSize(this, 'M')">M</button>
               <button class="size-btn" onclick="selectSize(this, 'L')">L</button>
               <button class="size-btn" onclick="selectSize(this, 'XL')">XL</button>
               <button class="size-btn" onclick="selectSize(this, 'XXL')">XXL</button>
+            </div>
+          </div>
+
+          <!-- Color Selection -->
+          <div class="product-colors">
+            <h3>Color</h3>
+            <div class="color-selector" id="color-selector">
+              <!-- Colors will be populated by JavaScript -->
             </div>
           </div>
 
@@ -272,7 +280,8 @@
       description: 'The perfect layering piece for any season. This sleeveless crop set combines comfort with style, making it ideal for everyday wear or activewear. Made from premium, breathable fabric that moves with you.',
       material: '92% Polyester, 8% Spandex',
       care: 'Machine wash cold with similar colors',
-      category: 'Tops & Sets'
+      category: 'Tops & Sets',
+      colors: ['Black', 'White', 'Grey']
     },
     2: {
       name: 'Long Legging Set',
@@ -281,7 +290,8 @@
       description: 'Versatile and comfortable long leggings designed for the modern woman. Whether you\'re working out or running errands, these leggings offer the perfect blend of style and functionality.',
       material: '90% Polyester, 10% Spandex',
       care: 'Machine wash cold, hang dry recommended',
-      category: 'Bottoms'
+      category: 'Bottoms',
+      colors: ['Black', 'Navy', 'Grey']
     },
     3: {
       name: 'Jumpsuit (Open Back)',
@@ -290,7 +300,8 @@
       description: 'Make a stunning statement with this elegant open-back jumpsuit. Perfect for special occasions or elevated everyday wear. The sleek design and premium fabric ensure you\'ll look and feel your best.',
       material: '88% Nylon, 12% Spandex',
       care: 'Hand wash or delicate cycle in cold water',
-      category: 'Dresses & Jumpsuits'
+      category: 'Dresses & Jumpsuits',
+      colors: ['Black', 'Red', 'White']
     },
     4: {
       name: 'Legging Short Set',
@@ -299,12 +310,14 @@
       description: 'Perfect blend of comfort and style. These short leggings are ideal for workouts, casual outings, or loungewear. The high-waisted design provides support and a flattering silhouette.',
       material: '91% Polyester, 9% Spandex',
       care: 'Machine wash warm, tumble dry low',
-      category: 'Bottoms'
+      category: 'Bottoms',
+      colors: ['Black', 'Pink', 'Grey']
     }
   };
 
   let currentProduct = null;
-  let selectedSize = 'M';
+  let selectedSize = null;
+  let selectedColor = null;
   let quantity = 1;
 
   function loadProduct() {
@@ -326,6 +339,17 @@
       mainImg.src = currentProduct.image;
       document.getElementById('thumb-1').src = currentProduct.image;
       document.getElementById('thumb-2').src = currentProduct.image;
+
+      // Populate colors
+      const colorSelector = document.getElementById('color-selector');
+      colorSelector.innerHTML = '';
+      currentProduct.colors.forEach((color) => {
+        const colorBtn = document.createElement('button');
+        colorBtn.className = 'color-btn';
+        colorBtn.textContent = color;
+        colorBtn.onclick = () => selectColor(colorBtn, color);
+        colorSelector.appendChild(colorBtn);
+      });
     }
   }
 
@@ -341,6 +365,12 @@
     selectedSize = size;
   }
 
+  function selectColor(btn, color) {
+    document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedColor = color;
+  }
+
   function increaseQty() {
     quantity = Math.min(quantity + 1, 10);
     document.getElementById('quantity').value = quantity;
@@ -352,9 +382,17 @@
   }
 
   function addProductToCart() {
+    if (!selectedSize) {
+      alert('Please select a size before adding to cart.');
+      return;
+    }
+    if (!selectedColor) {
+      alert('Please select a color before adding to cart.');
+      return;
+    }
     if (currentProduct) {
       for (let i = 0; i < quantity; i++) {
-        addToCart(currentProduct.name + ' (Size: ' + selectedSize + ')', currentProduct.price);
+        addToCart(currentProduct.name + ' (Size: ' + selectedSize + ', Color: ' + selectedColor + ')', currentProduct.price);
       }
       showNotification('Added to cart!');
       quantity = 1;

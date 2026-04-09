@@ -656,6 +656,44 @@ nav a.active::after {
   border-color: var(--accent-color);
 }
 
+.product-colors {
+  margin: 25px 0;
+}
+
+.product-colors h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.color-selector {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.color-btn {
+  padding: 10px 20px;
+  border: 2px solid var(--medium-gray);
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.color-btn:hover {
+  border-color: var(--accent-color);
+  background: rgba(203, 161, 53, 0.1);
+}
+
+.color-btn.active {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
 .product-quantity {
   margin: 25px 0;
 }
