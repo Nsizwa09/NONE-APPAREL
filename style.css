@@ -719,14 +719,19 @@ nav a.active::after {
 }
 
 .qty-btn {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--medium-gray);
-  background: white;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--medium-gray);
+  background: #f8f8f8;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 18px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 600;
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
 }
 
 .qty-btn:hover {
