@@ -371,6 +371,24 @@ nav a.active::after {
   margin-bottom: 15px;
 }
 
+.view-product-btn {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  margin-top: 15px;
+}
+
+.view-product-btn:hover {
+  background: #b8860b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(203, 161, 53, 0.4);
+}
+
 .product-content .price {
   font-size: 20px;
   font-weight: 700;
@@ -722,22 +740,24 @@ nav a.active::after {
   width: 50px;
   height: 50px;
   border: 2px solid var(--medium-gray);
-  background: #f8f8f8;
+  background: #e8e8e8;
   cursor: pointer;
   border-radius: 50%;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
   transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-color);
+  color: black;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .qty-btn:hover {
   background: var(--accent-color);
   color: white;
   border-color: var(--accent-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 #quantity {
